@@ -62,7 +62,7 @@ It only makes sense to use FormHandler after a form submission, so wrap it in a 
 ```php
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 	include('FormHandler.php');
-        $form = new FormHandler();
+	$form = new FormHandler();
 	// And so on...
 }
 ```

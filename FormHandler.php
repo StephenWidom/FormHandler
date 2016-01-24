@@ -14,8 +14,8 @@ class FormHandler
 	public $validate_emails = true; // Check whether email addresses submitted through form are valid
 	public $filter_spam = false;	// Check for a $_POST['timer'] value
 	public $html_email = true;	// Send an HTML email
-	public $include_reload_link;	// Include a link to reload the page (to try again on failure)
-	private $reload_link = false;	// Message containing reload link to append to error messages
+	public $include_reload_link = false;	// Include a link to reload the page (to try again on failure)
+	private $reload_link;		// Message containing reload link to append to error messages
 	private $this_page;		// Used for including a reload link
 	public $success_message = "Thanks for contacting us!";	// Displayed on successful form submission
 	public $spam_error = "There was an error with your attempt to contact us."; // Displayed on suspicious form submission
