@@ -26,7 +26,7 @@ Subject of generated email
 Email address(es) to CC
 
 ### bcc (string, array)
-Email address to BCC
+Email address(es) to BCC
 
 ### required (array)
 Array of required input names
@@ -57,15 +57,14 @@ Displayed after a suspicious form submission
 
 ## NOTES:
 Be sure to include the FormHandler.php file: `include('FormHandler.php');`
+
 It only makes sense to use FormHandler after a form submission, so wrap it in a conditional:
 ```php
-<?php
-    if ($_SERVER['REQUEST_METHOD'] == "POST"){
-        include('FormHandler.php');
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+	include('FormHandler.php');
         $form = new FormHandler();
-        // And so on...
-    }
-?>
+	// And so on...
+}
 ```
 [See it in action](http://stephenwidom.com/projects/FormHandler/)
 
