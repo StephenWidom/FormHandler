@@ -19,6 +19,7 @@ class FormHandler
 	private $this_page;		// Used for including a reload link
 	public $success_message = "Thanks for contacting us!";	// Displayed on successful form submission
 	public $spam_error = "There was an error with your attempt to contact us."; // Displayed on suspicious form submission
+	public $redirect_url; 		// URL to redirect to on succesful submission
 
 	function __construct($to = '', $subject = '')
 	{
@@ -125,6 +126,13 @@ class FormHandler
 
 		// If we've made it this far, everything went smoothly!
 
+		// Redirect to success url, if value has been set
+		if (isset($this->redirect_url)){
+			header('Location: ' . $this->redirect_url);
+			exit;
+		}
+
+		// If no value for redirect_url has been set, display success message
 		$this->displayMessageQuit($this->success_message, true);
 		if ($this->show_message)
 			echo $message;

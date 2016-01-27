@@ -55,6 +55,9 @@ Displayed on successful form submission
 ### spam_error = "There was an error with your attempt to contact us." (string)
 Displayed after a suspicious form submission
 
+### redirect_url (string)
+URL to redirect to after *successful* form submission
+
 ## NOTES:
 Be sure to include the FormHandler.php file: `include('FormHandler.php');`
 
