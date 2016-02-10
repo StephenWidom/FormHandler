@@ -126,17 +126,18 @@ class FormHandler
 
 		// If we've made it this far, everything went smoothly!
 
-		// Redirect to success url, if value has been set
+		// Redirect to success url, if value has been set, and exit script
 		if (isset($this->redirect_url)){
 			header('Location: ' . $this->redirect_url);
 			exit;
 		}
 
-		// If no value for redirect_url has been set, display success message
-		$this->displayMessageQuit($this->success_message, true);
+		// Display contents of message, if enabled
 		if ($this->show_message)
 			echo $message;
-		return true;
+
+		// Display success message and return true
+		return $this->displayMessageQuit($this->success_message, true);
 
 	}
 
